@@ -5,7 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+		type: 'music', // movie, music, poem
+		isMusic: true,
+		isPlay: false
     },
 
     /**

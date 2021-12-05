@@ -1,1 +1,104 @@
 /* pages/classic/classic.wxss */
+.classic-container {
+}
+/* 流行顶部 */
+.classic-container .classic-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30rpx;
+	height: 100rpx;
+	background-color: aquamarine;
+}
+.classic-container .classic-top .classic-top-left {
+	display: flex;
+	/* height: 46rpx; */
+}
+.classic-container .classic-top .classic-top-left .number {
+	/* border-right: 1rpx solid #000; */
+}
+.classic-container .classic-top .classic-top-left .number .num { 
+	font-weight: bold;
+	font-size: 58rpx;
+}
+.classic-container .classic-top .classic-top-left .time {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15rpx;
+	font-size: 24rpx;
+}
+/* .classic-container .classic-top .classic-top-left .time .month {
+	
+}
+.classic-container .classic-top .classic-top-left .time .year {
+} */
+/* 流行内容 */
+.content-wrapper {
+}
+.content-wrapper .img-wrapper {
+	position: relative;
+}
+/* 音乐内容 */
+.content-wrapper .img-wrapper .music-wrapper {
+	height: 500rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper {
+	position: relative;
+	width: 400rpx;
+	height: 400rpx;
+	border-radius: 200rpx;
+	overflow: hidden;
+}
+.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper .btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 120rpx;
+	height: 120rpx;
+}	
+	
+/* .content-wrapper .img-wrapper .music-img-wrapper .music-img {
+	
+} */
+.content-wrapper .text-img {
+	position: absolute;
+	width: 46rpx;
+	height: 142rpx;
+	bottom: -71rpx;
+	left: 30rpx;
+}
+
+/* 切换内容 */
+.content-wrapper .toggle-wrapper {
+	/* position: relative; */
+	
+}
+.content-wrapper .toggle-wrapper .btn {
+	padding: 10rpx;
+	width: 23rpx;
+	height: 34rpx;
+}
+.content-wrapper .toggle-wrapper .btn.disable {
+	opacity: .3;
+}
+
+.content-wrapper .info {
+	display: block;
+	width: 568rpx;
+	/* margin: 100rpx auto 0; */
+	margin-top: 100rpx;
+	font-size: 34rpx;
+}
+.content-wrapper .toggle-wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 588rpx;
+	height: 80rpx;
+	margin-top: 185rpx;
+	background-color: #f7f7f7;
+}

@@ -4,7 +4,7 @@
         <view class="classic-top-left">
 			<view class="number">
 				<text class="num-left">No.</text>
-				<text class="num">08</text>
+				<text class="num">{{index}}</text>
 			</view>
 			<view class="time">
 				<text class="month">十二月</text>
@@ -16,26 +16,32 @@
 	
 	<view class="content-wrapper">
 		<view class="img-wrapper">
-			<view wx:if="{{isMusic}}" class="music-wrapper horiz-center">
+			<view wx:if="{{cur.type===200}}" class="music-wrapper horiz-center">
 				<view class="music-img-wrapper">
-					<image class="music-img" src="/imgs/music.png"></image>
+					<image class="music-img" src="{{cur.image}}"></image>
 					
-					<image idden="{{isPlay}}" class="btn btn-play" src="/imgs/btn-play.png"></image>
+					<image hidden="{{isPlay}}" class="btn btn-play" src="/imgs/btn-play.png"></image>
 					<image hidden="{{!isPlay}}" class="btn btn-play" src="/imgs/btn-pause.png"></image>
 				</view>
 			</view>
-			<image wx:else src="/imgs/movie.png"></image>
+			<image wx:else src="{{cur.image}}"></image>
 			
-			<image wx:if="{{type === 'movie'}}" class="text-img" src="/imgs/movie-txt.png"></image>
-			<image wx:if="{{type === 'music'}}" class="text-img" src="/imgs/music-txt.png"></image>
-			<image wx:if="{{type === 'poem'}}" class="text-img" src="/imgs/poem-txt.png"></image>
+			<image hidden="{{cur.type !== 100}}" class="text-img" src="/imgs/movie-txt.png"></image>
+			<image hidden="{{cur.type !== 200}}" class="text-img" src="/imgs/music-txt.png"></image>
+			<image hidden="{{cur.type !== 300}}" class="text-img" src="/imgs/poem-txt.png"></image>
 		</view>
-		<text class="info horiz-center">人生不能像做菜，把所有的料准备好了才下锅。</text>
+		<text class="info horiz-center">{{cur.content}}</text>
 		<view class="toggle-wrapper horiz-center">
-			<!-- <view class="btn btn-prev"></view> -->
-			<image class="btn btn-prev disable" src="/imgs/icon-prev.png"></image>
-			<text class="title">李安《饮食男女》</text>
-			<image class="btn btn-next" src="/imgs/icon-next.png"></image>
+			<image 
+				class="{{ 'btn btn-prev ' + disablePrev}}"
+				src="/imgs/icon-prev.png"
+				bindtap="handleNextClick"
+				></image>
+			<text class="title">{{cur.title}}</text>
+			<image
+				class="{{'btn btn-next ' + disableNext}}"
+				src="/imgs/icon-next.png"
+				bindtap="handlePrevClick"></image>
 		</view>
 	</view>
 </view>

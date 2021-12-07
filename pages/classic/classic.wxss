@@ -1,5 +1,6 @@
 /* pages/classic/classic.wxss */
 .classic-container {
+	position: relative;
 }
 /* 流行顶部 */
 .classic-container .classic-top {
@@ -72,33 +73,40 @@
 	left: 30rpx;
 }
 
-/* 切换内容 */
-.content-wrapper .toggle-wrapper {
-	/* position: relative; */
-	
-}
-.content-wrapper .toggle-wrapper .btn {
-	padding: 10rpx;
-	width: 23rpx;
-	height: 34rpx;
-}
-.content-wrapper .toggle-wrapper .btn.disable {
-	opacity: .3;
-}
-
-.content-wrapper .info {
+.classic-container .info {
 	display: block;
 	width: 568rpx;
 	/* margin: 100rpx auto 0; */
 	margin-top: 100rpx;
 	font-size: 34rpx;
 }
-.content-wrapper .toggle-wrapper {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+
+/* 切换内容 */
+.classic-container .toggle-wrapper {
+	/* position: relative; */
+	position:fixed;
 	width: 588rpx;
 	height: 80rpx;
-	margin-top: 185rpx;
+	line-height: 80rpx;
 	background-color: #f7f7f7;
+	bottom: 40rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+}
+.classic-container .toggle-wrapper .btn {
+	position: absolute;
+	padding: 10rpx;
+	width: 23rpx;
+	height: 34rpx;
+	top: 10rpx;
+}
+.classic-container .toggle-wrapper .btn.btn-next {
+	right: 10rpx;
+}
+.classic-container .toggle-wrapper .btn.btn-prev {
+	left: 10rpx;
+}
+.classic-container .toggle-wrapper .btn.disable {
+	opacity: .3;
 }

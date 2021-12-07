@@ -1,7 +1,7 @@
 <!--pages/classic/classic.wxml-->
 <view class="container classic-container">
-    <view class="classic-top">
-        <view class="classic-top-left">
+	<view class="classic-top">
+		<view class="classic-top-left">
 			<view class="number">
 				<text class="num-left">No.</text>
 				<text class="num">{{index}}</text>
@@ -11,37 +11,31 @@
 				<text class="year">2021</text>
 			</view>
 		</view>
-        <view class="classic-top-right">right</view>
-    </view>
-	
+		<view class="classic-top-right">right</view>
+	</view>
+
 	<view class="content-wrapper">
 		<view class="img-wrapper">
 			<view wx:if="{{cur.type===200}}" class="music-wrapper horiz-center">
 				<view class="music-img-wrapper">
 					<image class="music-img" src="{{cur.image}}"></image>
-					
+
 					<image hidden="{{isPlay}}" class="btn btn-play" src="/imgs/btn-play.png"></image>
 					<image hidden="{{!isPlay}}" class="btn btn-play" src="/imgs/btn-pause.png"></image>
 				</view>
 			</view>
 			<image wx:else src="{{cur.image}}"></image>
-			
+
 			<image hidden="{{cur.type !== 100}}" class="text-img" src="/imgs/movie-txt.png"></image>
 			<image hidden="{{cur.type !== 200}}" class="text-img" src="/imgs/music-txt.png"></image>
 			<image hidden="{{cur.type !== 300}}" class="text-img" src="/imgs/poem-txt.png"></image>
 		</view>
 		<text class="info horiz-center">{{cur.content}}</text>
-		<view class="toggle-wrapper horiz-center">
-			<image 
-				class="{{ 'btn btn-prev ' + disablePrev}}"
-				src="/imgs/icon-prev.png"
-				bindtap="handleNextClick"
-				></image>
-			<text class="title">{{cur.title}}</text>
-			<image
-				class="{{'btn btn-next ' + disableNext}}"
-				src="/imgs/icon-next.png"
-				bindtap="handlePrevClick"></image>
-		</view>
+	</view>
+
+	<view class="toggle-wrapper horiz-center">
+		<image class="{{ 'btn btn-prev ' + disablePrev}}" src="/imgs/icon-prev.png" bindtap="handleNextClick"></image>
+		<text class="title">{{cur.title}}</text>
+		<image class="{{'btn btn-next ' + disableNext}}" src="/imgs/icon-next.png" bindtap="handlePrevClick"></image>
 	</view>
 </view>

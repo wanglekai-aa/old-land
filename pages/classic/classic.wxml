@@ -17,10 +17,10 @@
 	<view class="content-wrapper">
 		<view class="img-wrapper">
 			<view wx:if="{{cur.type===200}}" class="music-wrapper horiz-center">
-				<view class="music-img-wrapper">
+				<view class="{{'music-img-wrapper ' + (isPlay ? 'animation' : '') }}">
 					<image class="music-img" src="{{cur.image}}"></image>
-
-					<image
+				</view>
+				<image
 						hidden="{{isPlay}}"
 						class="btn btn-play"
 						src="/imgs/btn-play.png"
@@ -30,7 +30,6 @@
 						class="btn btn-play"
 						bindtap="handlePauseClick"
 						src="/imgs/btn-pause.png"></image>
-				</view>
 			</view>
 			<image wx:else src="{{cur.image}}"></image>
 

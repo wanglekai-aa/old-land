@@ -59,9 +59,6 @@ Page({
 			}
 		})
 	},
-	setBackgroundMusic () {
-		
-	},
 	// 播放音乐
 	handlePlayerClick () {
 		var isPlay = this.data.backgroundAudioManager.paused
@@ -117,6 +114,20 @@ Page({
 			console.log(err)
 		})
 	},
+	listenPlayer() {
+		let _this = this
+		this.data.backgroundAudioManager.onPlay(function () {
+			console.log('play')
+			_this.setData({ isPlay: true})
+		})
+		this.data.backgroundAudioManager.onPause(function () {
+			if (_this.data.curPlayIdx === parseInt(_this.data.index)) {
+				console.log('pause----')
+				
+				_this.setData({ isPlay: false})
+			}
+		})
+	},
     /**
      * 生命周期函数--监听页面加载
      */
@@ -135,6 +146,8 @@ Page({
 		 })
 		 this.setData({
 			 backgroundAudioManager: wx.getBackgroundAudioManager()
+		 }, function () {
+			 this.listenPlayer()
 		 })
     },
 

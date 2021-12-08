@@ -41,10 +41,18 @@
 }
 /* 音乐内容 */
 .content-wrapper .img-wrapper .music-wrapper {
+	position: relative;
 	height: 500rpx;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+@keyframes rotate {
+	0% { transform: rotate(0); }
+	25% {transform: rotate(90deg);}
+	50% { transform: rotate(180deg);}
+	75% { transform: rotate(270deg);}
+	100% {transform: rotate(360deg);}
 }
 .content-wrapper .img-wrapper .music-wrapper .music-img-wrapper {
 	position: relative;
@@ -52,8 +60,13 @@
 	height: 400rpx;
 	border-radius: 200rpx;
 	overflow: hidden;
+	transition: .3s ease-in;
+	/* transform: rotate(45deg); */
 }
-.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper .btn {
+.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper.animation {
+	animation: rotate 20s cubic-bezier(0,-0.02, 1, 0.99) infinite;
+}
+.content-wrapper .img-wrapper .music-wrapper .btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;

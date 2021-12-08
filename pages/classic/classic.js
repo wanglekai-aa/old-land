@@ -18,8 +18,12 @@ Page({
 		index: 0,
 		latest: 0,
 		disablePrev: '',
-		disableNext: ''
-    },
+		disableNext: '',
+		curMiusc: '',
+		backgroundAudioManager: null,
+		curPlayIdx: 0
+	},
+	// 更新数据
 	updateData (data) {
 		let index = data.index > 9 ? data.index : '0' + data.index
 		this.setData({
@@ -28,38 +32,81 @@ Page({
 		}, function () {
 			// if (this.data.index)
 			let idx = parseInt(this.data.index)
+
+			// 这里判断是否为 最后一期
 			if (idx === 1) {
 				this.setData({ disableNext: 'disable' })
 			} else {
 				this.setData({ disableNext: '' })
 			}
-			
+			// 这里判断 是否为最新一期
 			if (idx === this.data.latest) {
 				this.setData({ disablePrev: 'disable' })
 			} else {
 				this.setData({ disablePrev: '' })
 			}
+			// 这里判断当前期刊为 音乐
+			if (this.data.cur.type === 200) {
+				// this.setBackgroundMusic()
+				this.setData({ curMiusc: this.data.cur.url })
+				var isPlay = this.data.backgroundAudioManager.paused
+
+				if (isPlay === false && parseInt(this.data.index) === this.data.curPlayIdx) {
+					this.setData({ isPlay: true})
+				} else {
+					this.setData({ isPlay: false})
+				}
+			}
 		})
 	},
+	setBackgroundMusic () {
+		
+	},
+	// 播放音乐
+	handlePlayerClick () {
+		var isPlay = this.data.backgroundAudioManager.paused
+
+		let title = this.data.cur.title.split('《')[1].replace('》', '')
+		let singer = this.data.cur.title.split('《')[0]
+		// 设置背景音乐的🇭相关属性
+		this.data.backgroundAudioManager.title = title
+		this.data.backgroundAudioManager.epname = title
+		this.data.backgroundAudioManager.singer = singer
+		this.data.backgroundAudioManager.coverImgUrl = this.data.cur.image
+
+		if (isPlay === true) {
+			this.data.backgroundAudioManager.play()
+		} else {
+			// this.data.backgroundAudioManager.play()
+			this.data.backgroundAudioManager.src = this.data.curMiusc
+		}
+		this.setData({ 
+			isPlay: true,
+			curPlayIdx: parseInt(this.data.index)
+		 })
+	},
+	// 暂停音乐
+	handlePauseClick () {
+		this.data.backgroundAudioManager.pause()
+		this.setData({ isPlay: false })
+	},
+	// 获取当前的下一期
 	handleNextClick: function () {
 		let idx = parseInt(this.data.index)
-
+		if (idx === this.data.latest) return
 		getNext(idx)
 		.then(res => {
 			if (res.statusCode === 200) {
-			
 				this.updateData(res.data)
 			}
 		}).catch(err => {
 			console.log(err)
 		})
-		
-		// console.log(data)
-		// this.updateData(data)
 	},
+	// 获取当前的前一期
 	handlePrevClick: function () {
 		let idx = parseInt(this.data.index)
-		// if (idx === 1) return
+		if (idx === 1) return
 		
 		getPrev(parseInt(idx))
 		.then(res => {
@@ -70,7 +117,6 @@ Page({
 			console.log(err)
 		})
 	},
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -87,15 +133,9 @@ Page({
 		 }).catch(err => {
 			console.log(err)
 		 })
-			
-		// try {
-		// 	const { data } = await getLatest()
-		// 	this.updateData(data)
-		// } catch (err) {
-		// 	console.log(err)
-		// }
-		 
-		// console.log(data)
+		 this.setData({
+			 backgroundAudioManager: wx.getBackgroundAudioManager()
+		 })
     },
 
     /**

@@ -20,8 +20,16 @@
 				<view class="music-img-wrapper">
 					<image class="music-img" src="{{cur.image}}"></image>
 
-					<image hidden="{{isPlay}}" class="btn btn-play" src="/imgs/btn-play.png"></image>
-					<image hidden="{{!isPlay}}" class="btn btn-play" src="/imgs/btn-pause.png"></image>
+					<image
+						hidden="{{isPlay}}"
+						class="btn btn-play"
+						src="/imgs/btn-play.png"
+						bindtap="handlePlayerClick"></image>
+					<image
+						hidden="{{!isPlay}}" 
+						class="btn btn-play"
+						bindtap="handlePauseClick"
+						src="/imgs/btn-pause.png"></image>
 				</view>
 			</view>
 			<image wx:else src="{{cur.image}}"></image>

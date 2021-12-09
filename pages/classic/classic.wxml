@@ -11,7 +11,11 @@
 				<text class="year">2021</text>
 			</view>
 		</view>
-		<view class="classic-top-right">right</view>
+		<view class="classic-top-right">
+			<com-likes 
+				class="com-likes" 
+				likeData="{{likeData}}"></com-likes>
+		</view>
 	</view>
 
 	<view class="content-wrapper">

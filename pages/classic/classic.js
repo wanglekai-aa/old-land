@@ -21,14 +21,21 @@ Page({
 		disableNext: '',
 		curMiusc: '',
 		backgroundAudioManager: null,
-		curPlayIdx: 0
+		curPlayIdx: 0,
+		likeData: {}
 	},
 	// 更新数据
 	updateData (data) {
 		let index = data.index > 9 ? data.index : '0' + data.index
 		this.setData({
 			cur: data,
-			index
+			index,
+			likeData: {
+				type: data.type,
+				like_status: data.like_status === 1 ? true : false,
+				fav_nums: data.fav_nums,
+				id: data.id
+			}
 		}, function () {
 			// if (this.data.index)
 			let idx = parseInt(this.data.index)
@@ -140,6 +147,13 @@ Page({
 					// disablePrev: 'disable'
 				})
 				this.updateData(res.data)
+			} else {
+				// console.log(res)
+				wx.showToast({
+				  title: res.data.msg,
+				  icon: 'none',
+				  duration: 2000
+				})
 			}
 		 }).catch(err => {
 			console.log(err)

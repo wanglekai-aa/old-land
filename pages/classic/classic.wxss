@@ -7,16 +7,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 30rpx;
+	padding: 0 100rpx 0 30rpx;
 	height: 100rpx;
 	background-color: aquamarine;
 }
 .classic-container .classic-top .classic-top-left {
 	display: flex;
 	/* height: 46rpx; */
-}
-.classic-container .classic-top .classic-top-left .number {
-	/* border-right: 1rpx solid #000; */
 }
 .classic-container .classic-top .classic-top-left .number .num { 
 	font-weight: bold;
@@ -28,14 +25,13 @@
 	margin-left: 15rpx;
 	font-size: 24rpx;
 }
+
 /* .classic-container .classic-top .classic-top-left .time .month {
 	
 }
 .classic-container .classic-top .classic-top-left .time .year {
 } */
 /* 流行内容 */
-.content-wrapper {
-}
 .content-wrapper .img-wrapper {
 	position: relative;
 }

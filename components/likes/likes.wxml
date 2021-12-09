@@ -1,0 +1,12 @@
+<!--components/likes.wxml-->
+<view class="like-wrapper" bindtap="handleLikeClick">
+    <image 
+		hidden="{{like_status}}" 
+		class="icon-like" 
+		src="/imgs/icon-like.png"></image>
+    <image 
+		hidden="{{!like_status}}" 
+		class="icon-like" 
+		src="/imgs/icon-like-on.png"></image>
+    <text class="total">{{fav_nums}}</text>
+</view>

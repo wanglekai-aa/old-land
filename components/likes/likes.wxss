@@ -1,0 +1,17 @@
+/* components/likes.wxss */
+
+.like-wrapper {
+    position: relative;
+}
+
+.like-wrapper .icon-like {
+    width: 32rpx;
+    height: 28rpx;
+}
+.like-wrapper .total {
+    position: absolute;
+    top: -15rpx;
+    right:-50rpx;
+    font-size: 24rpx;
+    color: rgb(139, 139, 139);
+}

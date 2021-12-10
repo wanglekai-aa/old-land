@@ -11,7 +11,14 @@
             "list": []
         },
         "miniprogram": {
-            "list": []
+            "list": [
+                {
+                    "name": "pages/books/books",
+                    "pathName": "pages/books/books",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
     }
 }

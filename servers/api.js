@@ -43,13 +43,18 @@ const likeCancel = (art_id, type) => {
 const getFavor = (type, id) => {
 	return request(`/classic/${type}/${id}/favor`)
 }
+// 获取热门书籍(概要) 
+const getHotBooks = () => {
+	// /book/hot_list
+	return request('/book/hot_list')
+}
 
-// 取消点赞
 module.exports = {
 	getLatest,
 	getNext,
 	getPrev,
 	onLike,
 	likeCancel,
-	getFavor
+	getFavor,
+	getHotBooks
 }

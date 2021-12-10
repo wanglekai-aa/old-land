@@ -1,18 +1,39 @@
 // pages/book/book.js
+const {
+	getHotBooks
+} = require('../../servers/api.js')
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        books: []
     },
-
+    getData () {
+        getHotBooks().then(res => {
+            console.log(res)
+            if (res.statusCode === 200) {
+				this.setData({
+					books: res.data
+				})
+            } else {
+				// console.log(res)
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: "none"
+                })
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getData()
     },
 
     /**

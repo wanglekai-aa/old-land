@@ -1,2 +1,46 @@
 <!--pages/book/book.wxml-->
-<text>pages/book/book.wxml</text>
+<view class="books-container">
+    <view class="search-wrapper">
+        <image class="icon icon-search" src="/imgs/icon-search.png"></image>
+        <text class="txt">搜索图书名称</text>
+    </view>
+    <view class="books-list-wrapper">
+        <text class="title">精选</text>
+        <view class="books-list">
+            <view class="books-item">
+                <image class="book-img" src="/imgs/book.png"></image>
+                <view class="book-info">
+                    <text class="book-name">book-name</text>
+                    <text class="book-author">book-author</text>
+                    <view class="book-status">
+                        <text class="likes-num">123 喜欢</text> ·
+                        <text class="comments-num">123 短评</text>
+                    </view>
+                </view>
+            </view>
+            <view class="books-item">
+                <image class="book-img" src="/imgs/book.png"></image>
+                <view class="book-info">
+                    <text class="book-name">book-name</text>
+                    <text class="book-author">book-author</text>
+                    <view class="book-status">
+                        <text class="likes-num">123 喜欢</text> ·
+                        <text class="comments-num">123 短评</text>
+                    </view>
+                </view>
+            </view>
+            <view class="books-item">
+                <image class="book-img" src="/imgs/book.png"></image>
+                <view class="book-info">
+                    <text class="book-name">book-name</text>
+                    <text class="book-author">book-author</text>
+                    <view class="book-status">
+                        <text class="likes-num">123 喜欢</text> ·
+                        <text class="comments-num">123 短评</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

@@ -1,1 +1,91 @@
-/* pages/book/book.wxss */
+.books-container {
+}
+.books-container .search-wrapper {
+    width: 690rpx;
+    height: 68rpx;
+    margin: 20rpx auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    border-radius: 34rpx;
+}
+.books-container .search-wrapper .icon-search {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.books-container .search-wrapper .txt {
+    color: #999;
+    margin-left: 10rpx;
+}
+.books-list-wrapper {
+    padding-bottom: 20rpx;
+    background-color: #f7f7f7;
+}
+.books-list-wrapper .title {
+    display: block;
+    padding: 30rpx 0 20rpx;
+    text-align: center;
+}
+.books-list-wrapper .books-list {
+    overflow: hidden;
+    /* padding: 0 20rpx; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+}
+.books-list-wrapper .books-item {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+	width: 240rpx;
+    height: 360rpx;
+    margin-bottom: 58rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-shadow: 2rpx 2rpx 4rpx  rgba(177, 177, 177, 0.1);
+}
+/* .books-list-wrapper .books-item:last-child::after { */
+/*     
+.books-list-wrapper .books-list::after {
+    content: '';
+    flex: auto;
+} */
+
+.books-list-wrapper .books-item .book-img {
+    /* width: 240rpx; */
+	height: 360rpx;
+}
+.books-list-wrapper .book-info {
+    position: absolute;
+    padding: 16rpx;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 136rpx;
+    box-sizing: border-box;
+    /* background-color: rgb(255, 162, 162); */
+    background-color: #fff;
+}
+.books-list-wrapper .book-info .book-name,
+.books-list-wrapper .book-info .book-author {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+}
+.books-list-wrapper .book-info .book-name {
+    font-size: 24rpx;
+}
+.books-list-wrapper .book-info .book-author {
+    font-size: 20rpx;
+    color: #999;
+}
+.books-list-wrapper .book-status {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14rpx;
+    color: #999;
+    font-size: 20rpx;
+}

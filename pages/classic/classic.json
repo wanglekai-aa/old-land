@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "流行",
   "usingComponents": {
     "com-likes": "/components/likes/likes"
   }

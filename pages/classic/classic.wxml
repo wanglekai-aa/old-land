@@ -21,7 +21,8 @@
 	<view class="content-wrapper">
 		<view class="img-wrapper">
 			<view wx:if="{{cur.type===200}}" class="music-wrapper horiz-center">
-				<view class="{{'music-img-wrapper ' + (isPlay ? 'animation' : '') }}">
+				<view 
+					class="{{musicImgClass}}">
 					<image class="music-img" src="{{cur.image}}"></image>
 				</view>
 				<image

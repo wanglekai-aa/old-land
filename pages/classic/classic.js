@@ -22,7 +22,8 @@ Page({
 		curMiusc: '',
 		backgroundAudioManager: null,
 		curPlayIdx: 0,
-		likeData: {}
+		likeData: {},
+		musicImgClass: 'music-img-wrapper'
 	},
 	// 更新数据
 	updateData (data) {
@@ -59,9 +60,15 @@ Page({
 				var isPlay = this.data.backgroundAudioManager.paused
 
 				if (isPlay === false && parseInt(this.data.index) === this.data.curPlayIdx) {
-					this.setData({ isPlay: true})
+					this.setData({ 
+						isPlay: true,
+						musicImgClass: 'music-img-wrapper animation play'
+					})
 				} else {
-					this.setData({ isPlay: false})
+					this.setData({ 
+						isPlay: false,
+						musicImgClass: 'music-img-wrapper'
+					})
 				}
 			}
 		})
@@ -78,7 +85,8 @@ Page({
 		this.data.backgroundAudioManager.singer = singer
 		this.data.backgroundAudioManager.coverImgUrl = this.data.cur.image
 
-		if (isPlay === true) {
+		var isCur = this.data.curPlayIdx === parseInt(this.data.index)
+		if (isPlay === true && isCur) {
 			this.data.backgroundAudioManager.play()
 		} else {
 			// this.data.backgroundAudioManager.play()
@@ -124,15 +132,36 @@ Page({
 	listenPlayer() {
 		let _this = this
 		this.data.backgroundAudioManager.onPlay(function () {
-			console.log('play')
-			_this.setData({ isPlay: true})
+			// console.log('play')
+			var clsname = 'music-img-wrapper'
+			
+			if (_this.data.curPlayIdx === parseInt(_this.data.index)) {
+				clsname = _this.data.musicImgClass.indexOf('pause') === -1
+								? 'music-img-wrapper animation' : 'music-img-wrapper animation play'
+			}
+			_this.setData({ 
+				isPlay: true,
+				musicImgClass: clsname
+			})
 		})
 		this.data.backgroundAudioManager.onPause(function () {
 			if (_this.data.curPlayIdx === parseInt(_this.data.index)) {
 				console.log('pause----')
 				
-				_this.setData({ isPlay: false})
+				// var clsname = _this.data.curPlayIdx === parseInt(_this.data.index) ?
+				// 				'music-img-wrapper animation pause' : 'music-img-wrapper'
+				var clsname = 'music-img-wrapper'
+				if (_this.data.curPlayIdx === parseInt(_this.data.index)) {
+					clsname = 'music-img-wrapper animation pause'
+				}
+				
+				_this.setData({ 
+					musicImgClass: clsname
+				})
 			}
+			_this.setData({
+				isPlay: false
+			})
 		})
 	},
     /**

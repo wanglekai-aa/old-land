@@ -62,6 +62,12 @@
 .content-wrapper .img-wrapper .music-wrapper .music-img-wrapper.animation {
 	animation: rotate 20s cubic-bezier(0,-0.02, 1, 0.99) infinite;
 }
+.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper.pause {
+	animation-play-state: paused;
+}
+.content-wrapper .img-wrapper .music-wrapper .music-img-wrapper.play {
+	animation-play-state: running;
+}
 .content-wrapper .img-wrapper .music-wrapper .btn {
 	position: absolute;
 	top: 50%;

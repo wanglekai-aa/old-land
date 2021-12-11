@@ -17,6 +17,12 @@
                     "pathName": "pages/books/books",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/classic",
+                    "pathName": "pages/classic/classic",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

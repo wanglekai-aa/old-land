@@ -1,7 +1,11 @@
 /**app.wxss**/
+
 image {
 	width: 100%;
 }
 .horiz-center {
 	margin: 0 auto;
+}
+.block {
+	display: block;
 }

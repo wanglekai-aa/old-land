@@ -1,0 +1,89 @@
+/* .book-detail-container */
+.book-detail-container {
+     background-color: #f5f5f5;
+}
+.book-detail-container .section {
+    margin-top: 20rpx;
+    padding: 40rpx 28rpx;
+    /* padding: 0 28rpx 20rpx 28rpx; */
+
+    background-color: #fff;
+}
+.book-detail-container .section .title {
+    display: block;
+    padding-bottom: 20rpx;
+    text-align: center;
+}
+/* .book-detail-container  */
+.book-detail-container .section.book-info {
+    text-align: center;
+}
+.book-detail-container .section.book-info .img-cover {
+    width: 204rpx;
+    height: 305rpx;
+    margin: 0 auto 30rpx;
+    box-shadow: 2rpx 2rpx 2rpx rgba(0, 0, 0, .3);
+    overflow: hidden;
+    border-radius: 10rpx;
+    background-color: #ccc;
+}
+.book-detail-container .section.book-info .img-cover image {
+    width: 204rpx;
+    height: 305rpx;
+}
+.book-detail-container .section.book-info .book-name{
+    font-size: 34rpx;
+}
+.book-detail-container .section.book-info .author {
+    color: #999;
+}
+
+.book-comments-wrapper {
+    overflow: hidden;
+}
+.book-comments-wrapper .comments-item {
+    float: left;
+    padding: 6rpx 16rpx;
+    margin: 0 10rpx 10rpx 0;
+    color: #333;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+}
+.book-comments-wrapper .comments-item .comment-txt {
+    /* color: #999; */
+}
+.book-comments-wrapper .comments-item .comment-num {
+    margin-left: 10rpx;
+    color: #bbb;
+}
+
+.book-desc .desc-content {
+    text-indent: 40rpx;
+    /* background-color: #000; */
+}
+.book-detail-container .section.book-info2 .infomation {
+    margin-bottom: 10rpx;
+}
+.book-detail-container .section.book-info2 .infomation text:first-child {
+    display: inline-block;
+    width: 120rpx;
+    color: #bbb;
+}
+.red {
+    background-color: rgb(255, 95, 95);
+}
+.yellow {
+    background-color: rgb(255, 252, 83);
+}
+.blue {
+    background-color: rgb(117, 119, 236);
+}
+.gray {
+    background-color: rgb(223, 223, 223);
+}
+.cyan {
+    background-color: cyan;
+}
+.green {
+    background-color: #7aff7f;
+}

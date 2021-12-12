@@ -1,0 +1,6 @@
+<view class="search-wrapper">
+    <view class="search-content">
+        <image class="icon icon-search" src="/imgs/icon-search.png"></image>
+        <text class="txt">搜索图书名称</text>
+    </view>
+</view>

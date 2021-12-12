@@ -29,6 +29,15 @@ Page({
             console.log(err)
         })
     },
+    navigatorTo (option) {
+        // console.log(id)
+        var id = option.currentTarget.dataset.id
+
+        // console.log(id)
+        wx.navigateTo({
+          url: '/pages/book-detail/book-detail?id=' + id,
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

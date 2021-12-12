@@ -23,6 +23,12 @@
                     "pathName": "pages/classic/classic",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/book-detail/book-detail",
+                    "pathName": "pages/book-detail/book-detail",
+                    "query": "id=65",
+                    "scene": null
                 }
             ]
         }

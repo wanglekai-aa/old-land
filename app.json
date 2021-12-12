@@ -1,37 +1,45 @@
 {
-  "pages": [
-    "pages/classic/classic",
-    "pages/books/books",
-    "pages/likes/likes"
-  ],
-  "requiredBackgroundModes": ["audio", "location"],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#c7c7c7",
-    "selectedColor": "#000",
-    "list": [{
-      "text": "流行",
-      "pagePath": "pages/classic/classic",
-      "iconPath": "imgs/tab-icon/classic.png",
-      "selectedIconPath": "imgs/tab-icon/classic@highlight.png"
-    }, {
-      "text": "书单",
-      "pagePath": "pages/books/books",
-      "iconPath": "imgs/tab-icon/book.png",
-      "selectedIconPath": "imgs/tab-icon/book@highlight.png"
-    }, {
-      "text": "喜欢",
-      "pagePath": "pages/likes/likes",
-      "iconPath": "imgs/tab-icon/my.png",
-      "selectedIconPath": "imgs/tab-icon/my@highlight.png"
-    }]
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+    "pages": [
+        "pages/classic/classic",
+        "pages/books/books",
+        "pages/likes/likes",
+        "pages/book-detail/book-detail"
+    ],
+    "requiredBackgroundModes": [
+        "audio",
+        "location"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#c7c7c7",
+        "selectedColor": "#000",
+        "list": [
+            {
+                "text": "流行",
+                "pagePath": "pages/classic/classic",
+                "iconPath": "imgs/tab-icon/classic.png",
+                "selectedIconPath": "imgs/tab-icon/classic@highlight.png"
+            },
+            {
+                "text": "书单",
+                "pagePath": "pages/books/books",
+                "iconPath": "imgs/tab-icon/book.png",
+                "selectedIconPath": "imgs/tab-icon/book@highlight.png"
+            },
+            {
+                "text": "喜欢",
+                "pagePath": "pages/likes/likes",
+                "iconPath": "imgs/tab-icon/my.png",
+                "selectedIconPath": "imgs/tab-icon/my@highlight.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
 }

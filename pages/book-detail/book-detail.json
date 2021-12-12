@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "书单",
   "usingComponents": {
 	  "search-wrapper": "/components/search-wrapper/search-wrapper"
   }

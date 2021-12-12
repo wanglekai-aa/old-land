@@ -1,0 +1,52 @@
+<!--pages/book-detail/book-detail.wxml-->
+<view class="book-detail-container">
+	<search-wrapper></search-wrapper>
+    <view class="section book-info">
+        <view class="img-cover">
+            <image src="{{detail.image}}"></image>
+        </view>
+        <text class="book-name block">{{detail.title}}</text>
+        <text class="author block">{{detail.author[0]}}</text>
+    </view>
+    <view class="section book-comments-wrapper">
+        <text class="title">短评</text>
+        <view class="comments-list">
+            <view 
+                wx:for="{{comments}}"
+                wx:key="id"
+                class="{{'comments-item ' + item.color}}">
+                <text class="comment-txt">{{item.content}}</text>
+                <text class="comment-num">+ {{item.nums}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="section book-desc">
+        <text class="title">内容介绍</text>
+        <view class="desc-content">
+            {{detail.summary}}
+        </view>
+    </view>
+    <view class="section book-info2">
+        <text class="title">书本信息</text>
+        <view class="infomation cbs">
+            <text>出版社</text>
+            <text>{{detail.publisher}}</text>
+        </view>
+        <view class="infomation cbn">
+            <text>出版年</text>
+            <text>{{detail.pubdate}}</text>
+        </view>
+        <view class="infomation pages">
+            <text>页数</text>
+            <text>{{detail.pages}}</text>
+        </view>
+        <view class="infomation price">
+            <text>定价</text>
+            <text>{{detail.price}}</text>
+        </view>
+        <view class="infomation binding">
+            <text>装帧</text>
+            <text>{{detail.binding}}</text>
+        </view>
+    </view>
+</view>

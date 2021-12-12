@@ -1,15 +1,15 @@
 <!--pages/book/book.wxml-->
 <view class="books-container">
-    <view class="search-wrapper">
-        <image
-			class="icon icon-search" 
-			src="/imgs/icon-search.png"></image>
-        <text class="txt">搜索图书名称</text>
-    </view>
+    <search-wrapper></search-wrapper>
     <view class="books-list-wrapper">
         <text class="title">精选</text>
         <view class="books-list">
-            <view class="books-item" wx:for="{{books}}">
+            <view 
+                class="books-item" 
+                wx:for="{{books}}"
+                wx:key="id"
+                bindtap="navigatorTo"
+                data-id="{{item.id}}">
                 <image class="book-img" src="{{item.image}}"></image>
                 <view class="book-info">
                     <text class="book-name">{{item.title}}</text>

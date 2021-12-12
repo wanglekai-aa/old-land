@@ -1,0 +1,28 @@
+.search-wrapper {
+    /* width: 690rpx; */
+    height: 110rpx;
+    /* margin: 20rpx auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.search-wrapper .search-content {
+    width: 690rpx;
+    height: 68rpx;
+    background-color: #f7f7f7;
+    border-radius: 34rpx;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-wrapper .icon-search {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.search-wrapper .txt {
+    color: #999;
+    margin-left: 10rpx;
+}

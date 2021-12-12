@@ -55,6 +55,15 @@ const getBookDetailById = id => {
 const getSortComments = id => {
 	return request(`/book/${id}/short_comment`)
 }
+// 获取热搜关键字
+const getHotKeyword = () => {
+	return request('/book/hot_keyword')
+}
+// 书籍搜索
+const searchBook = data => {
+	return request('/book/search', data)
+}
+
 module.exports = {
 	getLatest,
 	getNext,
@@ -64,5 +73,7 @@ module.exports = {
 	getFavor,
 	getHotBooks,
 	getBookDetailById,
-	getSortComments
+	getSortComments,
+	getHotKeyword,
+	searchBook
 }

@@ -1,15 +1,10 @@
 <!--pages/book/book.wxml-->
 <view class="books-container">
-    <search-wrapper></search-wrapper>
+    <search-wrapper bindtap="handleSearchClick"></search-wrapper>
     <view class="books-list-wrapper">
         <text class="title">精选</text>
         <view class="books-list">
-            <view 
-                class="books-item" 
-                wx:for="{{books}}"
-                wx:key="id"
-                bindtap="navigatorTo"
-                data-id="{{item.id}}">
+            <view class="books-item" wx:for="{{books}}" wx:key="id" bindtap="navigatorTo" data-id="{{item.id}}">
                 <image class="book-img" src="{{item.image}}"></image>
                 <view class="book-info">
                     <text class="book-name">{{item.title}}</text>
@@ -21,6 +16,46 @@
                 </view>
             </view>
         </view>
+        <!-- 搜索面板 -->
+        <view class="{{ 'search-panel-wrapper ' + (searchIsShow ? ' on' : '') }}">
+            <view class="search-content-wrapper">
+                <view class="search-top">
+                    <view class="search-input-wrapper">
+                        <image class="icon icon-search" src="/imgs/icon-search.png"></image>
+                        <input class="search-input" type="text" value="{{keyworld}}" bindconfirm="handleConfirmClick" bindinput="handleSearchInput" focus="{{searchIsShow}}" placeholder="书籍名" />
+                        <image class="icon-delete" bindtap="handleClearKeyworld" src="/imgs/btn-delete.png"></image>
+                    </view>
+                    <text bindtap="handleCancelClick" class="btn btn-cancel">取消</text>
+                </view>
 
+                <view class="tag-section">
+                    <text class="info">历史搜索</text>
+                    <view class="tags-wrapper">
+                        <text class="tag-item">java</text>
+                        <text class="tag-item">script</text>
+                    </view>
+                </view>
+
+                <view class="tag-section">
+                    <text class="info">热门搜索</text>
+                    <view class="tags-wrapper">
+                        <text bindtap="handleConfirmClick" data-keyworld="{{item}}" wx:for="{{hot_keywords}}" wx:key="index" class="tag-item">{{item}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="book-list search-list">
+                <view class="books-item" wx:for="{{searchList}}" wx:key="id" bindtap="navigatorTo" data-id="{{item.id}}">
+                    <image class="book-img" src="{{item.image}}"></image>
+                    <view class="book-info">
+                        <text class="book-name">{{item.title}}</text>
+                        <text class="book-author">{{item.author}}</text>
+                        <view class="book-status">
+                            <text class="likes-num">{{item.fav_nums}} 喜欢</text> ·
+                            <text class="comments-num">123 短评</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
     </view>
 </view>

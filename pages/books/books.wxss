@@ -30,10 +30,12 @@
 }
 .books-list-wrapper .books-list {
     overflow: hidden;
-    /* padding: 0 20rpx; */
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* justify-content: space-evenly; */
+}
+.books-list-wrapper .search-list {
+    position: absolute;
+    top: 120rpx;
+    z-index: 9;
+    background-color: #fff;
 }
 .books-list-wrapper .books-item {
     position: relative;
@@ -44,7 +46,7 @@
     margin-bottom: 58rpx;
     border-radius: 20rpx;
     overflow: hidden;
-    box-shadow: 2rpx 2rpx 4rpx  rgba(177, 177, 177, 0.1);
+    box-shadow: 4rpx 4rpx 4rpx  rgba(177, 177, 177, 0.4);
 }
 /* .books-list-wrapper .books-item:last-child::after { */
 /*     
@@ -88,4 +90,93 @@
     margin-top: 14rpx;
     color: #999;
     font-size: 20rpx;
+}
+/* 搜索 面板 */
+.search-panel-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.search-panel-wrapper.on{
+    display: block;
+}
+.search-panel-wrapper .search-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    border: 1px solid rgb(241, 241, 241);
+    background-color: #fff;
+}
+.search-panel-wrapper .search-top .icon-search,
+.search-panel-wrapper .search-top .icon-delete {
+    width: 28rpx;
+    height: 28rpx;
+}
+.search-panel-wrapper .search-top .icon-delete {
+    padding: 10rpx;
+}
+.search-input-wrapper {
+    /* flex: 1; */
+    display: flex;
+    align-items: center;
+    width: 550rpx;
+    padding: 5rpx 20rpx;
+    background-color: rgb(235, 235, 235);
+    border-radius: 20rpx;
+}
+.search-input-wrapper .search-input {
+    margin-left: 20rpx;
+    padding: 2prx 10rpx;
+    flex: 1;
+    font-size: 24rpx;
+    /* background-color: #ccc; */
+}
+.search-panel-wrapper .search-content-wrapper {
+    margin-top: 120rpx;
+}
+.search-panel-wrapper .tag-section {
+    margin-top: 20rpx;
+    padding: 10rpx 30rpx;
+}
+
+.search-panel-wrapper .tag-section .info {
+    position: relative;
+    display: block;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding-left: 30rpx;
+    color: rgb(112, 112, 112);
+}
+.search-panel-wrapper .tag-section .info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 10rpx;
+    height: 30rpx;
+    background-color: #000;
+}
+.search-panel-wrapper .tag-section .tags-wrapper {
+    overflow: hidden;
+    /* margin: 20rpx 0; */
+    margin-top: 30rpx;
+}
+.search-panel-wrapper .tag-section .tags-wrapper .tag-item {
+    float: left;
+    margin: 0 15rpx 10rpx 0;
+    padding: 4rpx 16rpx;
+    border: 1px solid #ccc;
+    border-radius: 14rpx;
+    color: rgb(112, 112, 112);
+    font-size: 26rpx;
 }
